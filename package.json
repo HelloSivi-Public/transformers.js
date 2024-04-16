@@ -1,6 +1,6 @@
 {
   "name": "@hellosivi/transformers",
-  "version": "3.0.0-alpha.3",
+  "version": "3.0.0-alpha.4",
   "description": "State-of-the-art Machine Learning for the web. Run 🤗 Transformers directly in your browser, with no need for a server!",
   "main": "./src/transformers.js",
   "types": "./types/transformers.d.ts",
@@ -78,7 +78,8 @@
   ],
   "browser": {
     "sharp": false,
-    "onnxruntime-node": false
+    "onnxruntime-node": false,
+    "onnxruntime-common": false
   },
   "publishConfig": {
     "access": "public"
