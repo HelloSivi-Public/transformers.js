@@ -1,6 +1,6 @@
 {
   "name": "@hellosivi/transformers",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0-alpha.2",
   "description": "State-of-the-art Machine Learning for the web. Run 🤗 Transformers directly in your browser, with no need for a server!",
   "main": "./src/transformers.js",
   "types": "./types/transformers.d.ts",
@@ -15,6 +15,12 @@
     "docs-api": "node ./docs/scripts/generate.js",
     "docs-preview": "doc-builder preview transformers.js ./docs/source/ --not_python_module",
     "docs-build": "doc-builder build transformers.js ./docs/source/ --not_python_module --build_dir ./docs/build/ --repo_owner xenova"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/transformers.js",
+      "require": "./dist/transformers.cjs"
+    }
   },
   "repository": {
     "type": "git",
