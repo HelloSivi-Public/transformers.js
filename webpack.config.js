@@ -2,8 +2,13 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import { builtinModules } from 'module';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+
+// Add all builtin node modules as externals
+
 
 /**
  * Helper function to create webpack configurations.
@@ -64,6 +69,10 @@ function buildConfig({
         experiments: {
             outputModule,
         },
+        externals: builtinModules.reduce((ext, mod) => {
+            ext[mod] = 'commonjs ' + mod;
+            return ext;
+        }, {}),
         resolve: { alias },
 
         // Development server
